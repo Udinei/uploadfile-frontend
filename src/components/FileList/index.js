@@ -1,7 +1,8 @@
 ﻿/** Lista de arquivos e suas informações  */
 import React from 'react';
 import { Container, FileInfo, Preview } from './styles';
-import { CircularProgressbar } from 'react-circular-progressbar';
+import CircularProgressbar from 'react-circular-progressbar';
+import 'react-circular-progressbar/dist/styles.css';
 
 import { MdCheckCircle, MdError, MdLink } from 'react-icons/md';
 
@@ -31,12 +32,15 @@ const FileList = ({ files, onDelete }) => (
                         //** barra de progresso - exibida sozinha enquanto o upload esta acontecendo */ }
                         <CircularProgressbar
                             styles={ {
-                                root: { width: 25 }, // tamanho do icone de progress
+                                root: { width: 24 }, // tamanho do icone de progress
                                 path: { stroke: '#7159c1' } // cor do circulo do progress
                             } }
-                            strokeWidth={ 5 } // largura da seta de carregamento
+                            
+                            strokeWidth={ 10 } // largura da seta de carregamento
                             percentage={ uploadedFile.progress } // porcentagem carregada
+                           
                         />
+                       
                         
                     ) }
                   

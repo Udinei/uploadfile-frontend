@@ -83,6 +83,7 @@ class App extends Component {
       onUploadProgress: e => {  // config. que retorna o progresso do upload         
         const progress = parseInt(Math.round((e.loaded * 100) / e.total)); // e.loaded - o qto do arq. ja foi carregado, regra de tres para calcular o percentual de upload realizado
 
+        
         console.log("data comp rogress", progress);
         // atualiza dados do file no state
         this.updateFile(uploadedFile.id, {
