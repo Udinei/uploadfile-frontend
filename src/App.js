@@ -116,7 +116,10 @@ class App extends Component {
   // ao fechar a app
   componentWillUnmount(){
     // remove todos os objetos da cache de imagens
-    this.state.uploadedFiles.forEach(file => URL.revokeObjectURL(file.preview))
+    this.state.uploadedFiles.forEach(file => URL.revokeObjectURL(file.preview));
+    this.setState({
+           uploadedFiles: []
+    });
   }
 
   render() {
