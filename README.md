@@ -1,68 +1,52 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+# Diario de Dev
+App front-end para uploads de arquivos local ou remoto.
 
-## Available Scripts
+## Criando o projeto
+`create-react-app <my-app>`
+create-react-app - Deve ter sido instalado anteriormente.
 
-In the project directory, you can run:
+## Libs e ferramentas utilizadas no projeto
+ instalação ex: `yarn add <nomeDaLib>`
+ 
+ `styled-components` - lib que expande o uso de CSS em components Reactjs      utilizando um arquivo .js
 
-### `yarn start`
+`react-dropzone` - lib de criação de caixa de dialogo "dragandrop" para uploads de arquivos  arrastando e soltando o file, alem de visualizações, o usuário pode selecionar um file "agarrando" e arrastando-o para o local desejado 
 
-Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+`react-circular-progressbar` - Componente circular da barra de progresso, construído com SVG e extensivamente personalizável.
 
-The page will reload if you make edits.<br />
-You will also see any lint errors in the console.
+`react-icons` - lib de ícones em formato de vetor, populares do React de varias fontes, permite incluir apenas os ícones que o projeto está usando.
 
-### `yarn test`
+`lodash` - lib para trabalhar com matrizes, números, objetos, seqüências de caracteres etc.  Iterando matrizes, objetos e cadeias permite manipular e testar valores criando funções compostas.
 
-Launches the test runner in the interactive watch mode.<br />
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+`filesize` - retorna um inteiro contendo o tamanho em bytes do arquivo filename ou, se nenhum filename for especificado, retorna o do arquivo que está sendo lido no momento.
 
-### `yarn build`
+`axios` - Cliente HTTP baseado em promisses, que visam representar a conclusão de operações assíncronas para o navegador e nodejs
 
-Builds the app for production to the `build` folder.<br />
-It correctly bundles React in production mode and optimizes the build for the best performance.
+# Criando projeto front-end
+Executar o comando abaixo no terminal:
+`create-react-app uploadfile-front-end`
 
-The build is minified and the filenames include the hashes.<br />
-Your app is ready to be deployed!
+# Criado pasta styles
+Pasta criada para conter os stylos globais de CSS aplicado em todo projeto
+usando styled-components.
+Conteúdo:
+~~~
+import styled from 'styled-components';
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+export const Container = styled.div`
+   height: 100%; /** somente height 100%, porque width inplicitamente assume a configuração global */
+   display: flex;
+   justify-content: center; 
+   align-items: center; 
+`;
 
-### `yarn eject`
+export const Content = styled.div`
+    width: 100%; /** para caso o max-width seja menor que 400px a div vai usar 100% da tela */
+    max-width: 400px;
+    margin: 30px;
+    background: #FFF;
+    border-radius: 4px;
+    padding: 20px;
+`;
+~~~
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/code-splitting
-
-### Analyzing the Bundle Size
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size
-
-### Making a Progressive Web App
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app
-
-### Advanced Configuration
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/advanced-configuration
-
-### Deployment
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/deployment
-
-### `yarn build` fails to minify
-
-This section has moved here: https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify
